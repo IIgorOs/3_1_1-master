@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>List of users</title>
+</head>
+<body style="font-family:Arial, Verdana, sans-serif">
+<h1>User (<a th:text="${user.getId()}">VALUE</a>)</h1>
+
+<p th:text="${user.getName() + ' ' + user.getLastName() + ', ' + user.getAge()}">user</p>
+<p th:text="${user.getEmail()}">VALUE</p>
+
+<form method="LINK" th:action="@{/{id}/edit(id=${user.getId()})}"  th:href="@{/{id}/edit(id=${user.getId()})}">
+    <input type="submit" value="Edit">
+</form>
+<br/>
+<form th:method="DELETE" th:action="@{/{id}(id=${user.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+<br/>
+<hr/>
+<a href="/">To list of all users</a>
+
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
